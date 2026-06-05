@@ -382,10 +382,11 @@ st.plotly_chart(fig, use_container_width=True)
 
 # ── AI Insights ───────────────────────────────────────────────────────────────
 st.markdown('<div class="section-header">AI Executive Briefing</div>', unsafe_allow_html=True)
+MISTRAL_API_KEY = os.environ.get("MISTRAL_API_KEY", "M3Rrudl9hIgDduuJHTwxB37Mogr1nMQ6")
 try:
     MISTRAL_API_KEY = st.secrets["MISTRAL_API_KEY"]
 except:
-    MISTRAL_API_KEY = os.environ.get("MISTRAL_API_KEY", "")
+    pass
 
 def get_ai_insights(kpis):
     prompt = f"""You are a senior business analyst preparing an executive briefing for Aurora Retail & Digital Services.
